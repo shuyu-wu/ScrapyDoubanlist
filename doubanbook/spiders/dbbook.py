@@ -27,3 +27,8 @@ class DbbookSpider(scrapy.Spider):
             #print artist
             print ''
             yield item
+            nextPage = selector.xpath('//span[@class="next"]/link/@href').extract()
+            if nextPage:
+                next = nextPage[0]
+                print next
+                yield scrapy.http.Request(next,callback=self.parse)
