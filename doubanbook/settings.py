@@ -20,7 +20,8 @@ USER_AGENT = 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:45.0) Gecko/20100101 Firefo
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
-
+FEED_URI = u'file:///Users/shuyuwu/Projects/ScrapyDoubanlist/douban.csv'
+FEED_FORMAT = 'CSV'
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
 
