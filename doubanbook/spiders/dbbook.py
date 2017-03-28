@@ -14,8 +14,10 @@ class DbbookSpider(scrapy.Spider):
         albums = selector.xpath('//div[@class="bd doulist-subject"]')
         for each in albums:
             title = each.xpath('div[@class="title"]/a/text()').extract()[0]
+            title = title.replace(' ','').replace('\n','')
             rate = each.xpath('div[@class="rating"]/span[@class="rating_nums"]/text()').extract()[0]
             artist = re.search('<div class="abstract">(.*?)<br',each.extract(),re.S).group(1)
+            artist = artist.replace(' ','').replace('\n','')
             print 'title' + title
             print 'rate' + rate
             print artist
